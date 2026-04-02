@@ -1,8 +1,8 @@
 class Probe < Formula
-  desc "E2E testing CLI for Flutter apps — run ProbeScript tests on simulators and physical devices"
+  desc "E2E testing CLI for Flutter apps using ProbeScript"
   homepage "https://flutterprobe.dev"
   version "0.5.5"
-  license "BSL-1.1"
+  license "BUSL-1.1"
 
   on_macos do
     on_arm do
@@ -23,12 +23,14 @@ class Probe < Formula
   end
 
   def install
-    on_macos do
-      on_arm { bin.install "probe-darwin-arm64" => "probe" }
-      on_intel { bin.install "probe-darwin-amd64" => "probe" }
-    end
-    on_linux do
-      on_intel { bin.install "probe-linux-amd64" => "probe" }
+    if OS.mac?
+      if Hardware::CPU.arm?
+        bin.install "probe-darwin-arm64" => "probe"
+      else
+        bin.install "probe-darwin-amd64" => "probe"
+      end
+    elsif OS.linux?
+      bin.install "probe-linux-amd64" => "probe"
     end
   end
 
