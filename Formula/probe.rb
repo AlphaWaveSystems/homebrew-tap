@@ -1,24 +1,24 @@
 class Probe < Formula
   desc "E2E testing CLI for Flutter apps using ProbeScript"
   homepage "https://flutterprobe.dev"
-  version "0.16.7"
+  version "0.16.8"
   license "BUSL-1.1"
 
   on_macos do
     on_arm do
       url "https://github.com/AlphaWaveSystems/flutter-probe/releases/download/v#{version}/probe-darwin-arm64"
-      sha256 "f78d6b309fa6f10d3c1274e017ecf08360b81d20a8fec8ad7ad399635417c0b9"
+      sha256 "91e1a62836b04af45d2df860caf18024084bffc13fc042819257808f39f50d72"
     end
     on_intel do
       url "https://github.com/AlphaWaveSystems/flutter-probe/releases/download/v#{version}/probe-darwin-amd64"
-      sha256 "b4c0de1b42bf8624b0cd341d5d42ae489f6a6c3aef44628e8c565181607897a2"
+      sha256 "2134efae5817462c7adca312094d5b83f01607c642344369d4347aa3faf52f38"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/AlphaWaveSystems/flutter-probe/releases/download/v#{version}/probe-linux-amd64"
-      sha256 "34258e08fc68f3d14a17666e2a7c1c078a386c5da55de10baa7c228874254d34"
+      sha256 "44775dece63580fbb5642799a05e9dee8522ae52a03636ea5700c0d35ce99548"
     end
   end
 
